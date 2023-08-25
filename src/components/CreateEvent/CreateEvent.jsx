@@ -48,6 +48,13 @@ const CreateEvent = () => {
       ...prev,
       image: file.url,
     }));
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Imagen Cargada Exitosamente!",
+      showConfirmButton: false,
+      timer: 2500,
+    });
   };
   console.log(eventInfo);
   const handleChange = (e) => {
