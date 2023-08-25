@@ -76,13 +76,13 @@ const CreateEvent = () => {
         Swal.fire({
           position: "center",
           icon: "success",
-          title: "Evento Creado Exitosamente!",
+          title: "Producto Creado Exitosamente!",
           showConfirmButton: false,
           timer: 2500,
         });
         navigate("/");
       } catch (error) {
-        console.error("No se pudo crear el evento:", error);
+        console.error("No se pudo crear el producto:", error);
       }
     }
   }
@@ -113,10 +113,10 @@ const CreateEvent = () => {
         <section className="p-2 flex flex-col justify-center items-center md:w-3/5 text-center md:text-left">
           <div className="my-4 text-base text-Color1000 flex flex-col gap-4">
             <h2 className="text-3xl font-bold text-primaryColor">
-              Registra tu Evento
+              Crea tu Producto!
             </h2>
             <p className="text-base text-Color1000">
-              Deja los detalles de tu evento y publicado en la aplicación.
+              Crea tu producto en la aplicacion.
             </p>
           </div>
 
@@ -125,7 +125,7 @@ const CreateEvent = () => {
             onSubmit={handleSubmit}
           >
             <input
-              placeholder="Nombre del Cantante/s o Banda"
+              placeholder="Nombre del producto"
               type="text"
               value={eventInfo.name}
               onChange={handleChange}
@@ -135,7 +135,7 @@ const CreateEvent = () => {
              <p className=" text-red-600 text-xs">{errors.name}</p> 
 
             <input
-              placeholder="Información del evento"
+              placeholder="Información del producto"
               onChange={handleChange}
               type="text"
               value={eventInfo.description}
@@ -225,14 +225,14 @@ const CreateEvent = () => {
               </div>
             </div>
 
-            <p className="text-base text-red-400 px-10 text-center">El costo de la publicación de tu evento tendrá un costo del 20% del total de la venta de cada entrada</p>
+            <p className="text-base text-red-400 px-10 text-center"></p>
             <button
               type="submit"
               className="w-full md:w-3/4 bg-primaryColor text-Color200 hover:bg-Color200 hover:text-primaryColor 
             border hover:border-secondaryColor focus:outline-none px-10 py-3.5 text-base font-medium 
             transition duration-500 ease-in-out transform shadow-md rounded-xl mb-4"
             >
-              Crear Evento
+              Crear Producto!
             </button>
           </form>
         </section>

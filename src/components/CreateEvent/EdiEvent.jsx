@@ -43,7 +43,7 @@ const EditEvent = ({ selectedEvent }) => {
       ...prev,
       [e.target.name]: e.target.value,
     }));
-    console.log(eventInfo, "INFORMACIÓN DEL EVENTO POR PROPS");
+    //console.log(eventInfo, "INFORMACIÓN DEL EVENTO POR PROPS");
   };
 
   const handleSubmit = async (e) => {
@@ -58,19 +58,19 @@ const EditEvent = ({ selectedEvent }) => {
       Swal.fire({
         position: "center",
         icon: "success",
-        title: "Evento editado Exitosamente!",
+        title: "Producto editado Exitosamente!",
         showConfirmButton: false,
         timer: 2500,
       });
       navigate("/");
       dispatch(getUserById());
     } catch (error) {
-      console.error("Error al editar el evento:", error);
+      console.error("Error al editar el producto:", error);
       Swal.fire({
         position: "center",
         icon: "error",
-        title: "Error al editar el evento",
-        text: "Hubo un problema al editar el evento. Inténtalo nuevamente.",
+        title: "Error al editar el producto",
+        text: "Hubo un problema al editar el producto. Inténtalo nuevamente.",
       });
     }
   };
@@ -103,10 +103,10 @@ const EditEvent = ({ selectedEvent }) => {
         <section className="p-2 flex flex-col justify-center items-center w-full">
           <div className="my-4 text-base text-Color1000 flex flex-col gap-4">
             <h2 className="text-3xl font-bold text-primaryColor text-left">
-              Edita el Evento
+              Edita el Producto
             </h2>
             <p className="text-base text-Color1000 text-left">
-              modifica los detalles del evento y publicalo en el Inicio.
+              modifica los detalles del producto y publicalo en el Inicio.
             </p>
           </div>
 
@@ -115,7 +115,7 @@ const EditEvent = ({ selectedEvent }) => {
             onSubmit={handleSubmit}
           >
             <div className="w-3/4">
-              <label>Nombre del evento:</label>
+              <label>Nombre del producto:</label>
               <input
                 type="text"
                 name="name"
@@ -140,7 +140,7 @@ const EditEvent = ({ selectedEvent }) => {
             </div>
 
             <div className="w-3/4">
-              <label>Imagen Evento:</label>
+              <label>Imagen Producto:</label>
               <input
                 type="text"
                 name="image"
@@ -153,70 +153,7 @@ const EditEvent = ({ selectedEvent }) => {
             </div>
 
             <section className="w-full grid grid-cols-2 gap-3 place-items-center">
-              {/* <div className="w-3/4">
-                <label>Fecha:</label>
-                <input
-                  type="text"
-                  name="date"
-                  value={eventData?.date}
-                  onChange={(e) =>
-                    setEventData({ ...eventData, date: e.target.value })
-                  }
-                  className="w-full text-center  rounded-lg border bg-BackgroundLight px-4 py-2 focus:outline-none focus:border-secondaryColor"
-                />
-              </div> */}
-
-              {/* <div className="w-3/4">
-                <label>Horario de Inicio:</label>
-                <input
-                  type="time"
-                  name="start"
-                  value={eventData?.start}
-                  onChange={(e) =>
-                    setEventData({ ...eventData, start: e.target.value })
-                  }
-                  className="w-full text-center rounded-lg border bg-BackgroundLight px-4 py-2 focus:outline-none focus:border-secondaryColor"
-                />
-              </div> */}
-
-              {/* <div className="w-3/4">
-                <label>Horario de Fin:</label>
-                <input
-                  type="time"
-                  name="end"
-                  value={eventData?.end}
-                  onChange={(e) =>
-                    setEventData({ ...eventData, end: e.target.value })
-                  }
-                  className="w-full text-center rounded-lg border bg-BackgroundLight px-4 py-2 focus:outline-none focus:border-secondaryColor"
-                />
-              </div> */}
-
-              {/* <div className="w-3/4">
-                <label>Precio por Entrada:</label>
-                <input
-                  type="number"
-                  name="price"
-                  value={eventData?.price}
-                  onChange={(e) =>
-                    setEventData({ ...eventData, price: e.target.value })
-                  }
-                  className="w-full rounded-lg border bg-BackgroundLight px-4 py-2 focus:outline-none focus:border-secondaryColor"
-                />
-              </div> */}
-
-              {/* <div className="w-3/4">
-                <label>Stock de Entradas:</label>
-                <input
-                  type="number"
-                  name="quotas"
-                  value={eventData?.quotas}
-                  onChange={(e) =>
-                    setEventData({ ...eventData, quotas: e.target.value })
-                  }
-                  className="w-full rounded-lg border bg-BackgroundLight px-4 py-2 focus:outline-none focus:border-secondaryColor"
-                />
-              </div> */}
+             
 
 
               <div className="w-3/4">

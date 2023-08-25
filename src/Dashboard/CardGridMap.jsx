@@ -33,7 +33,7 @@ const CardGridMap = ({ purchases, totalBoletosVendidos, totalIngresos }) => {
           <Card>
             <Flex alignItems='items-start'>
               <div>
-                <Text>Total Boletos Vendidos</Text>
+                <Text>Total Productos Vendidos</Text>
                 <Metric>{totalBoletosVendidos}</Metric>
               </div>
               <BadgeDelta text="Porcentaje de cambio respecto al objetivo"></BadgeDelta>

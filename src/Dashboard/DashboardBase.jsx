@@ -39,12 +39,12 @@ const DashboardBase = () => {
                             <Table marginTop='mt-4'>
                                 <TableHead>
                                     <TableRow >
-                                        <TableHeaderCell>Nombre del Evento</TableHeaderCell>
+                                        <TableHeaderCell>Nombre del Producto</TableHeaderCell>
                                         <TableHeaderCell>Stock</TableHeaderCell>
-                                        <TableHeaderCell>Boletos vendidos</TableHeaderCell>
-                                        <TableHeaderCell>Costo del Evento</TableHeaderCell>
-                                        <TableHeaderCell>Ciudad del Evento</TableHeaderCell>
-                                        <TableHeaderCell>Total de boletos</TableHeaderCell>
+                                        <TableHeaderCell>Productos vendidos</TableHeaderCell>
+                                        <TableHeaderCell>Costo del Productos</TableHeaderCell>
+                                        <TableHeaderCell>Ciudad del Productos</TableHeaderCell>
+                                        <TableHeaderCell>Total de Productos</TableHeaderCell>
                                         <TableHeaderCell>Total $</TableHeaderCell>
                                         <TableHeaderCell>Estado de compra</TableHeaderCell>
                                     </TableRow>

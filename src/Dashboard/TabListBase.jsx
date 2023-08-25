@@ -130,7 +130,7 @@ const TabListBase = () => {
       Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'El estado del evento ha sido actualizado correctamente',
+        title: 'El estado del Producto ha sido actualizado correctamente',
         showConfirmButton: false,
         timer: 2000,
       });
@@ -139,12 +139,12 @@ const TabListBase = () => {
       dispatch(getEvents());
     } catch (error) {
       // Manejar el error si es necesario
-      console.error('Error al cambiar el estado del evento:', error);
+      console.error('Error al cambiar el estado del Producto:', error);
       // Mostrar mensaje de error o realizar alguna otra acción si es necesario.
       Swal.fire({
         position: 'center',
         icon: 'error',
-        title: 'Error al cambiar el estado del evento',
+        title: 'Error al cambiar el estado del Producto',
         text: 'Por favor, inténtalo nuevamente.',
         showConfirmButton: false,
         timer: 2500,
@@ -165,7 +165,7 @@ const TabListBase = () => {
             Usuarios
           </Tab>
           <Tab value={3} icon={UsersIcon}>
-            Eventos
+          Productos
           </Tab>
         </TabList>
         <TabPanels>

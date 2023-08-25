@@ -4,7 +4,7 @@ import React from 'react'
 const ChartDonut = ({ cityData }) => {
     return (
         <Card>
-            <Title>Sales by City</Title>
+            <Title>Ventas por Ciudad</Title>
             <DonutChart
                 data={cityData}
                 category='sales'
