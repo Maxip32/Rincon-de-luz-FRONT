@@ -258,7 +258,7 @@ const FormFirebase = () => {
               Regístrate
             </h2>
             <p className="text-base text-Color1000 text-left">
-              Regístrate con nosotros y entérate de nuevos eventos.
+             Beinvenido/a a Rincon de Luz!!.
             </p>
           </div>
 

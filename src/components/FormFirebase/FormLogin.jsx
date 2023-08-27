@@ -132,7 +132,7 @@ const LoginForm = () => {
               Ingresa 
             </h2>
             <p className="text-base text-Color1000 text-center">
-              para que no te pierdas de ningún evento.
+              Bienvenido Nuevamente!
             </p>
           </div>
           <form className="flex flex-col gap-6 w-full justify-center items-center px-3" onSubmit={handleSignIn}>
