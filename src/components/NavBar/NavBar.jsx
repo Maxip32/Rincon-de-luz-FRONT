@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
-//import logoTicketShow from "../../assets/logos/logoTicketShow.svg";
+import  logorincon from "../../assets/logos/logorincon2.png";
 import { useAuth } from "../../context/AuthContext"; // Importa el useAuth del contexto
 import { CartContext } from "../Shoppingcart/shoppingCartContext";
 import { useSelector } from "react-redux";
@@ -17,7 +17,7 @@ const NavBar = () => {
   const { user, logout } = useAuth(); // Extrae el usuario y la función de logout del contexto
   const users = useSelector((state) => state?.user);
   const userEmail = user && user.email ? user.email : ''; //mail
-  
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const usersFinder = users?.length
     ? users?.find((rol) => rol.email?.toLowerCase() === userEmail?.toLowerCase())
     : null;
@@ -40,15 +40,15 @@ const NavBar = () => {
   return (
     <nav className="md:flex md:justify-between md:items-center md:bg-transparent w-full py-5 md:px-6 lg:px-0 text-md font-light max-w-5xl md:mx-auto">
       <ul>
-        <NavLink to="/" className="ml-6 md:ml-0 flex md:items-center gap-3">
-          <li>
-            {/* <img className="w-8" src={logoTicketShow} alt="logo" /> */}
-          </li>
-          <li className="font-bold text-2xl tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-secondaryColor to-ChryslerBlue">
-           "Rincon de Luz"
-          </li>
-        </NavLink>
-      </ul>
+  <NavLink to="/" className="ml-6 md:ml-0 flex md:items-center gap-3">
+    <li style={{ display: 'flex', alignItems: 'center' }}>
+      <img className="w-8" src={logorincon} alt="logo" style={{ width: '15%' }} />
+      <span className="font-bold text-2xl tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-secondaryColor to-ChryslerBlue" style={{ marginTop: '-0.3cm' }}>
+        "Rincon de Luz"
+      </span>
+    </li>
+  </NavLink>
+</ul>
       <div 
         className="absolute cursor-pointer right-8 top-7 md:hidden"
         onClick={() => setOpen(!open)}
@@ -76,6 +76,7 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li className="ml-4">
+        {usersFinder?.role === "customer" ? (
           <NavLink
             to="/approved"
             onClick={closeDropdown}
@@ -83,6 +84,7 @@ const NavBar = () => {
           >
             Reseña
           </NavLink>
+           ) : null}
         </li>
         
         

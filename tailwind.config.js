@@ -17,7 +17,7 @@ export default {
         DarkTextPurple: "#7778B0",
         LightText: "#E2E0FF",
         LightGrayText: "DFDEF1",
-        BackgroundLight: "##bebeef",
+        BackgroundLight: "#dcdce1",
         BackgroundDark: "#0D0A2C",
         HeadingsBlack: "#0D0A2C",
         Color1000: "#5F5C7F",

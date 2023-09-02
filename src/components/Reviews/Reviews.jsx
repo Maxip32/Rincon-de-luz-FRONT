@@ -1,6 +1,4 @@
-/* eslint-disable react/prop-types */
 import Slider from "react-slick";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
@@ -8,14 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getComment } from "../../redux/actions";
 
-
-
-
 const Reviews = () => {
   const comment = useSelector((state) => state.comment);
   console.log(comment, "este es el estado comment");
- 
-
 
   const comentario = {
     name: comment.name,
@@ -33,7 +26,7 @@ const Reviews = () => {
 
   const settings = {
     className: "center",
-    centerMode: true,
+    centerMode: false, // Cambiado a false
     infinite: true,
     slidesToShow: 2,
     speed: 500,
@@ -62,18 +55,15 @@ const Reviews = () => {
     ],
   };
 
-
-
   return (
     <div className="flex flex-col items-center justify-center w-full h-92 mt-8 mb-6 max-w-6xl">
-      {/* <p>{comment.name}</p> */}
       <span className="mt-2 mb-7 font-bold text-3xl text-DarkTextPurple">
-        Reseñas de los clientes que confían en nosotros{" "}
+        Reseñas de los clientes que confían en nosotros
       </span>
-      <Slider {...settings} className="w-4/5 ">
+      <Slider {...settings} className="w-4/5">
         {comment.map((element, index) => (
-          <section key={index} className=" md:w-full md:h-92 overflow-hidden ">
-            <div className="relative items-center w-full py-4 mx-auto px-4 max-w-7xl ">
+          <section key={index} className="md:w-full md:h-92 overflow-hidden">
+            <div className="relative items-center w-full py-4 mx-auto px-4 max-w-7xl">
               <div className="grid grid-cols-1">
                 <div className="w-full max-w-lg mx-auto my-4 bg-white shadow-xl rounded-xl h-72">
                   <div className="p-6 lg:text-center">
