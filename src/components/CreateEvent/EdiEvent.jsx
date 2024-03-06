@@ -30,8 +30,8 @@ const EditEvent = ({ selectedEvent }) => {
       name: "",
       description: "",
       image: "",
-      address: "",
-      city: "",
+      stock: "",
+      price: "",
       genres: "",
     }
   );
@@ -157,13 +157,13 @@ const EditEvent = ({ selectedEvent }) => {
 
 
               <div className="w-3/4">
-                <label>Dirección de Lugar:</label>
+                <label>Stock:</label>
                 <input
                   type="text"
-                  name="address"
-                  value={eventData?.address}
+                  name="quotas"
+                  value={eventData?.quotas}
                   onChange={(e) =>
-                    setEventData({ ...eventData, address: e.target.value })
+                    setEventData({ ...eventData, quotas: e.target.value })
                   }
                   className="w-full rounded-lg border bg-BackgroundLight px-4 py-2 focus:outline-none focus:border-secondaryColor"
                 />
@@ -172,19 +172,16 @@ const EditEvent = ({ selectedEvent }) => {
               
 
               <div lassName="w-3/4">
-              <label>Ciudad:</label>
-              <select
-                name="city"
-                value={eventData?.city}
-                onChange={(e) => setEventData({ ...eventData, city: e.target.value })}
+              <label>Precio:</label>
+              <input
+                type="text"
+                name="price"
+                value={eventData?.price}
+                onChange={(e) => setEventData({ ...eventData, price: e.target.value })}
                 className="w-full rounded-lg border bg-BackgroundLight px-4 py-2 focus:outline-none focus:border-secondaryColor"
-              >
-                <option value="">Selecciona una ciudad</option>
-                <option value="La Carlota">La Carlota</option>
-                {/* <option value="Mendoza">Mendoza</option>
-                <option value="Rosario">Rosario</option>
-                <option value="San Juan">San Juan</option> */}
-              </select>
+              />
+              
+               
             </div>
 
             <div className="w-3/4">

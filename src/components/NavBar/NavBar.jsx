@@ -44,7 +44,7 @@ const NavBar = () => {
     <li style={{ display: 'flex', alignItems: 'center' }}>
       <img className="w-8" src={logorincon} alt="logo" style={{ width: '15%' }} />
       <span className="font-bold text-2xl tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-secondaryColor to-ChryslerBlue" style={{ marginTop: '-0.3cm' }}>
-        "Rincon de Luz"
+        "Libreria, Polirrubro"
       </span>
     </li>
   </NavLink>
@@ -184,7 +184,7 @@ const NavBar = () => {
                       >
                         Perfil
                       </NavLink>
-                      {usersFinder?.role === "admin" ? (
+                      {usersFinder?.role === "customer" ? (
                         <NavLink
                           to="/createEvent"
                           className="block rounded-lg px-4 py-2 text-sm hover:text-secondaryColor hover:bg-BackgroundLight"
@@ -195,7 +195,7 @@ const NavBar = () => {
                         </NavLink>
                       ) : null
                        }
-                      {usersFinder?.role === "admin" ? (
+                      {usersFinder?.role === "customer" ? (
                         <NavLink
                           to="/PanelAdmin"
                           className="block rounded-lg px-4 py-2 text-sm hover:text-secondaryColor hover:bg-BackgroundLight"

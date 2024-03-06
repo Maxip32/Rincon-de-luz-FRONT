@@ -2,32 +2,24 @@
 import { useEffect, useState } from "react";
 import Hero from "../../components/Hero/Hero";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import Footer from "../../components/Footer/Footer";
 import Landing from "../Landing/Landing";
-//import Loading from "../../components/Loading/Loading";
-import Carga from "../../assets/image/umm-zen-perezoso.gif"
 import {
-  FilterByCity,
   FilterByDate,
   GetByCity,
   GetByDate,
-  filterByGenres,
   getEvents,
   getGenres,
   getReset,
   getResetOrder,
   getUserById,
-  orderByDate,
-  orderByName,
+ 
 } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../../components/Card/Card";
 import Paginate from "../../components/Paginate/Paginate";
-import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import { LiaArrowRightSolid, LiaArrowDownSolid } from "react-icons/lia";
 import Reviews from "../../components/Reviews/Reviews";
-import SelectFilter from "../../components/SelectFilter/SelectFilter";
+
 
 const Home = () => {
   const allowedDates = [
@@ -73,13 +65,13 @@ const Home = () => {
   const genres = useSelector((state) => state.genres);
   const [order, setOrder] = useState(true);
   const allEventsDates = useSelector((state) => state.date);
-  const ciudades = useSelector((state) => state.city);
+  const prices = useSelector((state) => state.price);
   const [deletedEvents, setdeletedEvents] = useState(new Set());
   const activeEvents = allEvents.filter((event) => !event.deleted);
   const [filteredEvents, setFilteredEvents] = useState(activeEvents);
   const [filters, setFilters] = useState({
     genres: "",
-    city: "",
+    price: "",
     date: "",
   });
   const [events, setEvents] = useState(activeEvents);
@@ -108,7 +100,7 @@ const Home = () => {
   
     const filteredEvents = activeEvents.filter((event) => {
       const matchesGenre = !genreValue || event.genre.includes(genreValue);
-      const matchesCity = !filters.city || event.city.includes(filters.city);
+      const matchesCity = !filters.price || event.price.includes(filters.price);
       return matchesGenre && matchesCity;
     });
   
@@ -116,19 +108,22 @@ const Home = () => {
     setCurrentPage(1);
   };
 
-  const handleFiltroCiudades = (event) => {
-    const cityValue = event.target.value;
-    setFilters((prev) => ({ ...prev, city: cityValue }));
+  const handleFiltroPrecios = (event) => {
+    const priceValue = event.target.value;
+    setFilters((prev) => ({ ...prev, price: priceValue }));
+  
+    const filteredEvents = activeEvents.filter((event) => {
+      return !priceValue || event.price === priceValue;
+    });
+  
+    setEvents(filteredEvents);
     setCurrentPage(1);
   };
-
-  const [date, setDate] = useState(new Date());
-
   useEffect(() => {
     const eventosFiltrados = allEvents.filter((evento) => {
       const matchesGenre =
         !filters.genres || evento?.genre.includes(filters.genres);
-      const matchesCity = !filters.city || evento.city.includes(filters.city);
+      const matchesCity = !filters.price || evento.price.includes(filters.price);
       const matchesDate = !filters.date || evento.date === filters.date;
       return matchesGenre && matchesCity && matchesDate;
     });
@@ -177,7 +172,7 @@ const Home = () => {
   const handleReset = () => {
     setFilters({
       genre: "",
-      city: "",
+      price: "",
       date: "",
     });
     setEvents(allEvents);
@@ -255,24 +250,24 @@ const Home = () => {
             </div>
 
             {/* Filter by cities */}
-            <div className="flex flex-col m-1 gap-2 text-LightText w-44">
-              <span className="font-semibold text-xs text-black ">Ciudades</span>
-              <select
+            {/* <div className="flex flex-col m-1 gap-2 text-LightText w-44">
+              <span className="font-semibold text-xs text-black ">Precios</span> */}
+              {/* <select
                 className="bg-transparent border-b border-secondaryColor outline-none focus:border-blue-700 text-grey-500"
-                onChange={(event) => handleFiltroCiudades(event)}
+                onChange={(event) => handleFiltroPrecios(event)}
                 defaultValue="default"
               >
                 <option value="default" disabled>
                   {" "}
-                  Ciudades{" "}
+                  prices{" "}
                 </option>
-                {ciudades?.map((cit) => (
-                  <option value={cit.name} key={cit.id} className="text-black">
-                    {cit.name}
+                {prices?.map((cit) => (
+                  <option value={cit.price} key={cit.id} className="text-black">
+                    {cit.price}
                   </option>
                 ))}
-              </select>
-            </div>
+              </select> */}
+            {/* </div> */}
           </section>
           {/* //- Fin Filter bar ---------> */}
 
