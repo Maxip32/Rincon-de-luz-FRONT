@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
-import Hero from "../../components/Hero/Hero";
+// import Hero from "../../components/Hero/Hero";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Landing from "../Landing/Landing";
 import {
@@ -19,6 +19,7 @@ import Card from "../../components/Card/Card";
 import Paginate from "../../components/Paginate/Paginate";
 import "react-calendar/dist/Calendar.css";
 import Reviews from "../../components/Reviews/Reviews";
+
 
 
 const Home = () => {
@@ -61,7 +62,7 @@ const Home = () => {
   //const navigate = useNavigate();
   const dispatch = useDispatch();
   const noEvents = useSelector((state) => state.noEvents);
-  const allEvents = useSelector((state) => state.Events);
+  const allEvents = useSelector((state) => state?.Events);
   const genres = useSelector((state) => state.genres);
   const [order, setOrder] = useState(true);
   const allEventsDates = useSelector((state) => state.date);
@@ -75,7 +76,7 @@ const Home = () => {
     date: "",
   });
   const [events, setEvents] = useState(activeEvents);
-
+  console.log(events, " EVENTOS DEL HOME")
   const [orderType, setOrderType] = useState("asc");
 
   useEffect(() => {
@@ -220,13 +221,48 @@ const Home = () => {
       />
       ) : (
         <>
-          <Hero />
+          {/* <Hero /> */}
 
+          
+
+          
+
+
+          {/* <ProductList events={currentEvents} /> */}
+          
+          {/* Title & order by events */}
+          <section className="w-full md:flex-wrap max-w-5xl md:mx-auto px-7 mt-20 flex flex-col md:flex-row items-center justify-center" style={{ marginLeft: '4cm' }}>
+  <p className="text-3xl font-semibold text-primaryColor mb-5 mr-5 md:mb-0">
+    {/* Tu contenido aquí */}
+  </p>
+  <div className="md:space-x-3.5 flex flex-col md:flex-row items-center gap-4">
+    {/* order by alfabético */}
+    {/* <select
+      className="h-8 w-44 px-2 rounded-lg focus:outline-none border focus:border-secondaryColor pointer cursor-pointer"
+      onChange={(event) => handleOrderByName(event)}
+      defaultValue="default"
+    >
+      <option className="" value="default" disabled>
+        Orden Alfabético
+      </option>
+      <option value="asc">A-Z</option>
+      <option value="desc">Z-A</option>
+    </select> */}
+  </div>
+</section>
           {/* //- Filter bar ---------> */}
           <section className="py-4 w-4/6 md:w-2/4 max-w-xl md:mx-auto h-fit md:h-24 flex flex-col md:flex-row gap-2 justify-evenly items-center md:mt-[-66px] md:z-10 bg-rojosanteria/95 rounded-2xl">
             {/* Filter by genres */}
+
             <div className="flex flex-col m-1 gap-2 text-LightText w-44">
               <span className="font-semibold text-xs text-black">Opciones</span>
+              
+    <button
+      className="py-1.5 px-3 rounded-md bg-primaryColor/90 text-Color200 hover:text-black hover:bg-white border hover:border-primaryColor transition duration-500 ease-in-out transform"
+      onClick={handleReset}
+    >
+      Reiniciar Filtros
+    </button>
               <select
                 id="genre-selector"
                 className="bg-transparent border-b border-secondaryColor outline-none focus:border-blue-700 text-grey-500 "
@@ -235,6 +271,7 @@ const Home = () => {
               >
                 <option value="default" disabled className="font-semibold text-xs text-black">
                   {" "}
+                
                   Filtrado de Productos{" "}
                 </option>
                 {genres?.map((gen) => (
@@ -248,91 +285,39 @@ const Home = () => {
                 ))}
               </select>
             </div>
-
-            {/* Filter by cities */}
-            {/* <div className="flex flex-col m-1 gap-2 text-LightText w-44">
-              <span className="font-semibold text-xs text-black ">Precios</span> */}
-              {/* <select
-                className="bg-transparent border-b border-secondaryColor outline-none focus:border-blue-700 text-grey-500"
-                onChange={(event) => handleFiltroPrecios(event)}
-                defaultValue="default"
-              >
-                <option value="default" disabled>
-                  {" "}
-                  prices{" "}
-                </option>
-                {prices?.map((cit) => (
-                  <option value={cit.price} key={cit.id} className="text-black">
-                    {cit.price}
-                  </option>
-                ))}
-              </select> */}
-            {/* </div> */}
+            
           </section>
-          {/* //- Fin Filter bar ---------> */}
-
-          
-
-          <SearchBar returnToFirstPage={returnToFirstPage} />
-
-         
-
-          {/* Title & order by events */}
-          <section className="w-full md:flex-wrap max-w-5xl md:mx-auto px-7 mt-20 flex flex-col md:flex-row items-center justify-center" style={{ marginLeft: '4cm' }}>
-  <p className="text-3xl font-semibold text-primaryColor mb-5 mr-5 md:mb-0">
-    {/* Tu contenido aquí */}
-  </p>
-  <div className="md:space-x-3.5 flex flex-col md:flex-row items-center gap-4">
-    {/* order by alfabético */}
-    <select
-      className="h-8 w-44 px-2 rounded-lg focus:outline-none border focus:border-secondaryColor pointer cursor-pointer"
-      onChange={(event) => handleOrderByName(event)}
-      defaultValue="default"
-    >
-      <option className="" value="default" disabled>
-        Orden Alfabético
-      </option>
-      <option value="asc">A-Z</option>
-      <option value="desc">Z-A</option>
-    </select>
-    <button
-      className="py-1.5 px-3 rounded-md bg-primaryColor/90 text-Color200 hover:text-black hover:bg-white border hover:border-primaryColor transition duration-500 ease-in-out transform"
-      onClick={handleReset}
-    >
-      Reiniciar Filtros
-    </button>
-  </div>
-</section>
           {/* Fin Title & order by events */}
 
         {/* Inicio Card section */}
+          <SearchBar className="mt-50" returnToFirstPage={returnToFirstPage} />
         <section className="w-full md:w-auto h-full overflow-x-scroll overscroll-x-contain max-w-7xl mx-auto p-10 m-6 flex flex-nowrap space-x-6 md:flex-wrap md:justify-center overflow-y-hidden scrollbar-hide">
         {noEvents ? <p>No hay productos disponibles</p> : (
-              (
-                currentEvents.length > 0 ? (
-                  currentEvents.map((cu) =>
-                    !cu.disabled &&
-                    (!filters?.genres || cu.genre && cu.genre.includes(filters.genres)) &&
-                    (!filters?.city || cu?.city.includes(filters.city)) ? (
-                      <Card
-                        id={cu.id}
-                        name={cu.name}
-                        image={cu.image}
-                        genre={cu.genre}
-                        date={cu.date}
-                        location={cu.location}
-                        city={cu.city}
-                        price={cu.price}
-                        key={cu.id}
-                        deletedEvents={deletedEvents}
-                      />
-                    ) : null
-                  )
+          (
+            currentEvents.length > 0 ? (
+              currentEvents.map((cu) =>
+              !cu.disabled &&
+              (!filters?.genres || cu.genre && cu.genre.includes(filters.genres)) &&
+              (!filters?.city || cu?.city.includes(filters.city)) ? (
+                <Card
+                id={cu.id}
+                name={cu.name}
+                image={cu.image}
+                genre={cu.genre}
+                date={cu.date}
+                location={cu.location}
+                city={cu.city}
+                price={cu.price}
+                key={cu.id}
+                deletedEvents={deletedEvents}
+                />
+                ) : null
+                )
                 ) : (
                   <p>No hay productos disponibles que coincidan con los filtros.</p>
-                )
-              )
-            )}
+                  )
+                  )
+                  )}
       </section>
           {/* Fin Card section */}
 

@@ -68,6 +68,15 @@ const NavBar = () => {
         </li>
         <li className="ml-4">
           <NavLink
+            to="/products"
+            onClick={closeDropdown}
+            className={({ isActive }) => (isActive ? activeStyle : "")}
+          >
+            Productos
+          </NavLink>
+        </li>
+        <li className="ml-4">
+          <NavLink
             to="/about"
             onClick={closeDropdown}
             className={({ isActive }) => (isActive ? activeStyle : "")}

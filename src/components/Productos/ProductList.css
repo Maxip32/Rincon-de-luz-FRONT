@@ -1,0 +1,44 @@
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 23%; /* Establece el ancho de cada tarjeta */
+    margin: 1%; /* Establece el margen entre las tarjetas */
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  @media print {
+    .print-button {
+      display: none;
+    }
+  }
+  /* Estilos para el botón de impresión */
+.print-button {
+    padding: 0.5rem 0.6rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #1a72ed; /* Color verde similar a otros botones */
+    color: #fff; /* Texto blanco */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Estilos para el icono de impresora */
+  .print-icon {
+    margin-right: 0.5rem; /* Espacio entre el icono y el texto */
+  }
+
+  /* Adjust the positioning of search bar and filters */
+.search-bar {
+  margin-top: 50px; /* Adjust this value as needed */
+}
+
+.filters-container {
+  margin-top: 50px; /* Adjust this value as needed */
+}

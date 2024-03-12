@@ -1,37 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import { FiShoppingCart } from "react-icons/fi";
-import { useAuth } from "../../context/AuthContext";
-import { CartContext } from "../Shoppingcart/shoppingCartContext";
-import {
-  LiaCartPlusSolid,
-  LiaCartArrowDownSolid,
-  LiaTicketAltSolid,
-} from "react-icons/lia";
-//import { addToCartBackend } from "../Shoppingcart/CartContext"
 
-const Card = ({ id, image, name, city, }) => {
+import { Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+
+
+const Card = ({ id, image, name}) => {
   const { user } = useAuth(); // Obtén el usuario autenticado desde el contexto de autenticación
 
-  // const monthsMap = {
-  //   "01": "ENE",
-  //   "02": "FEB",
-  //   "03": "MAR",
-  //   "04": "ABR",
-  //   "05": "MAY",
-  //   "06": "JUN",
-  //   "07": "JUL",
-  //   "08": "AGO",
-  //   "09": "SEP",
-  //   10: "OCT",
-  //   11: "NOV",
-  //   12: "DIC",
-  // };
-
-  // const [year, month, day] = date.split("-"); // Dividimos la fecha en año, mes y día
-  // const formattedMonth = monthsMap[month];
+  
 
   return (
     <div className="bg-white w-72 h-[350px] md:h-80 m-4 border shadow-md rounded-2xl flex-none lg:flex lg:flex-col transform transition-all hover:-translate-y-1 hover:shadow-xl">

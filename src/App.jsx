@@ -16,6 +16,7 @@ import Dashboard from '../src/Dashboard/Dashboard'
 import CreateEvent from "./components/CreateEvent/CreateEvent";
 
 import EditEvent from "./components/CreateEvent/EdiEvent"
+import ProductList from "./components/Productos/Productlist";
 function App() {
   //const location = useLocation();
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/approved" element={<CompraPaypal/>}/>
             <Route path="/about" element={<About />} />
             <Route path="/PanelAdmin" element={<Dashboard/>} />
+            <Route path="/products" element={<ProductList/>}/>
             <Route path="*" element={<CompraPaypal/>} />
           </Routes>
         </div>
