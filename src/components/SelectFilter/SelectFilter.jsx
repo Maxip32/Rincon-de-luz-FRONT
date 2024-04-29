@@ -89,7 +89,7 @@ function SelectFilter() {
 
             <li>
               <label
-                htmlFor="FilterPurple"
+                htmlFor="FilterBlack"
                 className="inline-flex items-center gap-2"
               >
                 <input

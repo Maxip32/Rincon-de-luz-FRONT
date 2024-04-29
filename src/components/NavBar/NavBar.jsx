@@ -56,7 +56,7 @@ const NavBar = () => {
         {open ? <AiOutlineClose size={26} /> : <AiOutlineMenu size={26} />}
       </div>
 
-      <ul className={`flex flex-col pl-4 md:ml-0 py-5 md:py-0 mt-4 md:mt-0 md:flex md:flex-row md:items-center md:justify-between gap-4 md:gap-0 absolute md:static bg-BackgroundLight md:z-auto z-10 w-full md:w-auto transition-all duration-500 ease-in ${open ? 'top-10 opacity-100' : 'top-[-400px]'} md:opacity-100 opacity-0 `}>
+      <ul className={`flex flex-col pl-4 md:ml-0 py-5 md:py-0 mt-4 md:mt-0 md:flex md:flex-row md:items-center md:justify-between gap-4 md:gap-0 absolute md:static md:bg-transparent  md:z-auto z-10 w-full md:w-auto transition-all duration-500 ease-in ${open ? 'top-10 opacity-100' : 'top-[-400px]'} md:opacity-100 opacity-0 `}>
         <li className="ml-4">
           <NavLink
             to="/"
@@ -237,7 +237,7 @@ const NavBar = () => {
         {!user && (
           <li className="ml-3">
             <NavLink to="/login">
-              <button className="py-1.5 px-3 rounded-md bg-rojosanteria text-Color200 hover:text-black hover:bg-white border-2 hover:border-primaryColor">
+              <button className="py-1.5 px-3 rounded-md bg-yellow text-Black hover:text-black hover:bg-orange border-2 hover:border-primaryColor">
                 Ingresa
               </button>
             </NavLink>

@@ -251,11 +251,11 @@ const Home = () => {
   </div>
 </section>
           {/* //- Filter bar ---------> */}
-          <section className="py-4 w-4/6 md:w-2/4 max-w-xl md:mx-auto h-fit md:h-24 flex flex-col md:flex-row gap-2 justify-evenly items-center md:mt-[-66px] md:z-10 bg-rojosanteria/95 rounded-2xl">
+          <section className="py-4 w-4/6 md:w-2/4 max-w-xl md:mx-auto h-fit md:h-24 flex flex-col md:flex-row gap-2 justify-evenly items-center md:mt-[-66px] md:z-10 bg-blue rounded-2xl">
             {/* Filter by genres */}
 
             <div className="flex flex-col m-1 gap-2 text-LightText w-44">
-              <span className="font-semibold text-xs text-black">Opciones</span>
+              <span className="font-semibold text-xs text-black"></span>
               
     <button
       className="py-1.5 px-3 rounded-md bg-primaryColor/90 text-Color200 hover:text-black hover:bg-white border hover:border-primaryColor transition duration-500 ease-in-out transform"
@@ -265,7 +265,7 @@ const Home = () => {
     </button>
               <select
                 id="genre-selector"
-                className="bg-transparent border-b border-secondaryColor outline-none focus:border-blue-700 text-grey-500 "
+                className="bg-transparent border-b border-secondaryColor outline-none focus:border-blue-700 text-black "
                 onChange={(event) => handleFilterGenres(event)}
                 defaultValue="default"
               >

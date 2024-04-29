@@ -307,17 +307,18 @@ const CreateEvent = () => {
               </div>
               <div className="w-1/2">
               <button
-            onClick={handleClear}
-            className="w-full md:w-3/4 bg-gray-400 text-white hover:bg-gray-500 hover:text-white border border-gray-400 
-            focus:outline-none px-10 py-3.5 text-base font-medium transition duration-500 ease-in-out 
-            transform shadow-md rounded-xl mb-4"
-          >
-            Limpiar
-          </button>
+  onClick={handleClear}
+  className="w-full bg-gray-400 text-white hover:bg-blue hover:text-black border border-gray-400 
+  focus:outline-none px-12 py-3.9 text-base font-medium transition duration-500 ease-in-out 
+  transform shadow-md rounded-xl mb-3 ml-[-1.2cm]"
+  style={{ textAlign: 'center' }} // Centra horizontalmente el texto
+>
+  <span style={{ marginLeft: '-0.5cm' }}>Clear</span> {/* Ajusta el margen izquierdo del texto */}
+</button>
               </div>
             </div>
 
-            <p className="text-base text-red-400 px-10 text-center"></p>
+            <p className="text-base text-red-400 px-12 text-center"></p>
             <button
               type="submit"
               className="w-full md:w-3/4 bg-primaryColor text-Color200 hover:bg-Color200 hover:text-primaryColor 

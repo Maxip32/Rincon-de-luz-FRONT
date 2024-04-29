@@ -11,7 +11,7 @@ const Card = ({ id, image, name}) => {
   
 
   return (
-    <div className="bg-white w-72 h-[350px] md:h-80 m-4 border shadow-md rounded-2xl flex-none lg:flex lg:flex-col transform transition-all hover:-translate-y-1 hover:shadow-xl">
+    <div className="bg-transparent w-72 h-[350px] md:h-80 m-4 border bg-Red shadow-md rounded-2xl flex-none lg:flex lg:flex-col transform transition-all hover:-translate-y-1 hover:shadow-xl">
       <div className=" flex flex-col h-3/4 w-full justify-center items-center ">
         <img
           className="w-64 h-56 md:h-52 object-cover md:mt-3 rounded-lg"
@@ -38,7 +38,7 @@ const Card = ({ id, image, name}) => {
            
               <>
                 <Link to={`/detail/${id}`}>
-                  <button className="py-1.5 px-5 rounded-md bg-primaryColor text-white hover:text-primaryColor hover:bg-amarillosanteria/75 border hover:border-secondaryColor transition duration-500 ease-in-out transform">
+                  <button className="py-1.5 px-5 rounded-md bg-tr text-black hover:text-primaryColor hover:bg-amarillosanteria/75 border hover:border-secondaryColor transition duration-500 ease-in-out transform">
                     {" "}
                     Detalles del producto{" "}
                   </button>

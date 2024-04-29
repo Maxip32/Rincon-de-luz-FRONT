@@ -9,16 +9,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        rojosanteria:'#5522CC',
+        rojosanteria: '#5522CC',
         amarillosanteria: '#fffa89',
-        primaryColor: '#242565',
-        secondaryColor: '#f84e4e',
-        ChryslerBlue: "#5522CC",
+        primaryColor: '#e03333',
+        secondaryColor: '#e03333',
+        ChryslerBlue: "#e03333",
         DarkTextPurple: "#7778B0",
         LightText: "#E2E0FF",
-        LightGrayText: "DFDEF1",
+        LightGrayText: "#DFDEF1",
         BackgroundLight: "#dcdce1",
-        BackgroundDark: "#0D0A2C",
+        BackgroundDark: "#e03333",
         HeadingsBlack: "#0D0A2C",
         Color1000: "#5F5C7F",
         Color900: "#7F7CA2",
@@ -30,28 +30,12 @@ export default {
         Color200: "#F9F9FF",
         White: "#FFFFFF",
         
-        // Colores de Tremor
-        'tremor-brand-faint': "#eff6ff",
-        'tremor-brand-muted': "#bfdbfe",
-        'tremor-brand-subtle': "#60a5fa",
-        'tremor-brand': "#3b82f6",
-        'tremor-brand-emphasis': "#1d4ed8",
-        'tremor-brand-inverted': "#ffffff",
-
-        'tremor-background-muted': "#f9fafb",
-        'tremor-background-subtle': "#f3f4f6",
-        'tremor-background': "#ffffff",
-        'tremor-background-emphasis': "#374151",
-
-        'tremor-border': "#e5e7eb",
-
-        'tremor-ring': "#e5e7eb",
-
-        'tremor-content-subtle': "#9ca3af",
-        'tremor-content': "#6b7280",
-        'tremor-content-emphasis': "#374151",
-        'tremor-content-strong': "#111827",
-        'tremor-content-inverted': "#ffffff",
+        // Nuevos tonos
+        amarilloIntermedio: '#FFFF00',
+        amarilloMasOscuro: '#CCCC00',
+        purple: '#800080',
+        blanco: '#FFFFFF',
+        negro: '#000000',
       },
       boxShadow: {
         // light
@@ -82,30 +66,30 @@ export default {
   safelist: [
     {
       pattern:
-        /^(bg-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
+        /^(bg-(?:amarilloIntermedio|purple|blanco|negro)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
       variants: ["hover", "ui-selected"],
     },
     {
       pattern:
-        /^(text-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
+        /^(text-(?:amarilloIntermedio|purple|blanco|negro)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
       variants: ["hover", "ui-selected"],
     },
     {
       pattern:
-        /^(border-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
+        /^(border-(?:amarilloIntermedio|purple|blanco|negro)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
       variants: ["hover", "ui-selected"],
     },
     {
       pattern:
-        /^(ring-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
+        /^(ring-(?:amarilloIntermedio|purple|blanco|negro)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
     },
     {
       pattern:
-        /^(stroke-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
+        /^(stroke-(?:amarilloIntermedio|purple|blanco|negro)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
     },
     {
       pattern:
-        /^(fill-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
+        /^(fill-(?:amarilloIntermedio|purple|blanco|negro)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
     },
   ],
   plugins: [
